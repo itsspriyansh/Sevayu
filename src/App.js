@@ -1,8 +1,10 @@
+import { Route } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
-    <div className="">
-      hello
+    <div>
+      <LandingPage />
     </div>
   );
 }
