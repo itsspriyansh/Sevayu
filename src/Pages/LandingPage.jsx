@@ -4,6 +4,7 @@ import doctor from "../images/doctor.png"
 import mobile from "../images/mobile.svg"
 import hermes from "../images/hermes.png"
 import { HiOutlineExternalLink } from 'react-icons/hi'
+import ContactUs from '../Components/ContactUs'
 
 const LandingPage = () => {
   return (
@@ -38,7 +39,7 @@ const LandingPage = () => {
           </div>
           <div className='w-full h-[10rem] pt-5 pl-3 block sm:hidden'>
             <p className='text-xl xl:text-[1.8rem] transition-all ease-in-out my-3 text-black visby'>
-                Join us to get access <br /> to all the facilities
+                Join us to get access <br /> to <span className='font-bold'>all the facilities</span>
             </p>        
                 <button className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium'>Login</button>
                 <button className='bg-white w-[8rem] h-[3rem] text-[#FF008A] rounded-md font-medium border-[#FF008A] border-2 border-solid'>Sign up</button>
@@ -67,7 +68,7 @@ const LandingPage = () => {
       </div>
 
 
-      <div className='w-full h-[60rem] bg-[#3B59FA] mt-12'>
+      <div className='w-full h-[40rem] bg-[#3B59FA] mt-12'>
         <div className='mx-auto w-10/12 h-full flex max-w-[75rem]'>
           <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out text-white mt-14 akshar'>03</p>
           <div className='flex justify-between w-full'>
@@ -88,6 +89,12 @@ const LandingPage = () => {
         </div>
       </div>
 
+      <div className='mx-auto w-10/12 mt-[8rem] max-w-[75rem] h-[60rem]'>
+          <div className=' flex sm:block mb-24'>
+            <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA]'>04</p>
+          </div>
+        <ContactUs />
+      </div>
     </div>
   )
 }
