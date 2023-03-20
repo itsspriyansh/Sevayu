@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar'
 import doctor from "../images/doctor.png"
 import mobile from "../images/mobile.svg"
 import hermes from "../images/hermes.png"
-
+import { HiOutlineExternalLink } from 'react-icons/hi'
 
 const LandingPage = () => {
   return (
@@ -12,12 +12,12 @@ const LandingPage = () => {
 
         <div className=' mx-auto w-10/12 mt-14 max-w-[75rem]'>
           <div className=' flex sm:block'>
-            <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out'>01</p>
+            <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA]'>01</p>
             <p className='sm:hidden block text-3xl pl-5 visby'>Get Quick <br /> Medical Serivce</p>
           </div>
           <div className='sm:mt-10 mt-[10rem]'>
             <div className=' pl-[50%] lg:text-[2.5rem] md:text-3xl transition-all ease-in-out sm:text-3xl'>
-              <p className='sm:inline-block hidden leading-[3rem]'>Get Quick <br /> Medical Serivce</p>
+              <p className='sm:inline-block hidden leading-[3rem] visby'>Get Quick <br /> <span className=' font-bold'>Medical Serivce</span> </p>
             </div>
             <div className='w-full h-[15rem] pl-[5%] rounded-3xl bg-[#3B59FA] mt-10 relative'>
               <div className='w-[270px] bottom-0 h-[150%] xl:w-[320px] xl:h-[170%] absolute transition-all ease-in-out'>
@@ -25,7 +25,7 @@ const LandingPage = () => {
               </div>
                 <div className='sm:block hidden'>
                   <div className=' pl-[45%] absolute top-[10%]'>
-                    <p className='text-white text-2xl xl:text-[1.8rem] transition-all ease-in-out'>
+                    <p className='text-white text-2xl xl:text-[1.8rem] transition-all ease-in-out visby font-semibold'>
                       Join us to get access <br /> to all the facilities
                     </p>
                     <nav className='mt-5 lg:pl-0 md:pl-1 sm:pl-10 transition-all ease-in-out'>
@@ -37,7 +37,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className='w-full h-[10rem] pt-5 pl-3 block sm:hidden'>
-            <p className='text-xl xl:text-[1.8rem] transition-all ease-in-out my-3 text-black'>
+            <p className='text-xl xl:text-[1.8rem] transition-all ease-in-out my-3 text-black visby'>
                 Join us to get access <br /> to all the facilities
             </p>        
                 <button className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium'>Login</button>
@@ -47,27 +47,32 @@ const LandingPage = () => {
 
 
       <div className='mx-auto w-10/12 mt-[8rem] max-w-[75rem]'>
-        <div className='sm:block flex '>
-          <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out'>02</p>
-          <p className='sm:hidden block text-3xl pl-5'>Our Mobile App is Fast, Reliable and Easy to Use</p>
+        <div className='sm:block flex'>
+          <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA]'>02</p>
+          <p className='sm:hidden block text-3xl pl-5 visby'>Our Mobile App is Fast, Reliable and Easy to Use</p>
         </div>
         <div className='flex'>
-          <div className='w-[25rem] p-10'>
+          <div className='w-[25rem] px-10 my-10'>
             <img src={mobile} alt="mobile" className='w-full h-full object-cover'></img>
           </div>
-          <div className='xl:pt-[10rem] pt-[5rem] xl:text-[2.5rem] text-[2rem] md:leading-[3rem] leading-[2.5rem] sm:block hidden xl:pl-24 transition-all ease-in-out'>
+          <div className='xl:pt-[10rem] pt-[5rem] xl:text-[2.5rem] text-[2rem] md:leading-[3rem] leading-[2.5rem] sm:block hidden xl:pl-24 transition-all ease-in-out visby'>
             <p>Our Mobile App is Fast, Reliable <br /> and Easy to Use</p>
-            <button className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium text-[1rem] mt-8'>Get the app</button>
+            <button className='bg-[#FF008A] w-[9rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium text-[1rem] mt-8 font-sans flex justify-center'>Get the app<HiOutlineExternalLink className='ml-1 mt-4' /></button>
           </div>
         </div>
+          <div className='sm:hidden flex ml-14 text-[#FF008A] visby'>
+            <a>Get the app </a>
+            <HiOutlineExternalLink className='ml-1 mt-1' />
+          </div>
       </div>
+
 
       <div className='w-full h-[60rem] bg-[#3B59FA] mt-12'>
         <div className='mx-auto w-10/12 h-full flex max-w-[75rem]'>
-          <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out text-white mt-14'>03</p>
+          <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out text-white mt-14 akshar'>03</p>
           <div className='flex justify-between w-full'>
             <div className=' text-white max-w-[50rem] pt-[10rem] ml-[-4rem]'>
-                <p className='text-[2.5rem]'>About us</p>
+                <p className='text-[2.5rem] visby font-semibold'>About us</p>
                   <br /> <br />
                 <p>Welcome to Sevayu, your trusted partner in healthcare administration.
                   Our mission is to provide high quality management services to Healthcare facilities

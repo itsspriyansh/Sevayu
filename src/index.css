@@ -1,10 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: visby;
-  src: url(./Fonts/visbymed.otf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Poppins:wght@300&display=swap');
 
 body {
   margin: 0;
@@ -20,3 +17,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.visby {
+  font-family: 'Poppins', sans-serif;
+}
+
+.akshar {
+  font-family: 'Akshar', sans-serif;
+}
+
