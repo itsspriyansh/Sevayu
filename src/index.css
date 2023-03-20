@@ -26,3 +26,11 @@ code {
   font-family: 'Akshar', sans-serif;
 }
 
+.button:hover {
+  outline-color: #FF008A;
+  outline-offset: 0;
+  outline-width: 3px;
+  outline-style: solid;
+  transition: all ease-in-out 0.1s;
+  border: none;
+}

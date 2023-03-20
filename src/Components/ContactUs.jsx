@@ -22,11 +22,7 @@ const ContactUs = () => {
               name="email" />
           </div>
           <div className="mt-8">
-            <button 
-              type="button" 
-              className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-[#FF008A] text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
-                Submit
-            </button>
+          <button className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium button'>Submit</button>
           </div>
         </div>
       )
