@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material'
 import React from 'react'
 
-const SignupDetails = ({ setPage }) => {
+const SignupDetails = ({ next, handleChange }) => {
 
-const nextClickHandler = () => {
-  setPage(prev => !prev);
-}
+  const handleNext = e => {
+    e.preventDefault()
+    next()
+  }
 
   return (
     <>
@@ -22,7 +23,7 @@ const nextClickHandler = () => {
         <div className='mt-[2.5rem]'>
         <TextField id="standard-basic" label="Confirm Password" variant="standard" type="password" className='w-9/12' />
         </div>
-        <button onClick={nextClickHandler} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] right-[40%]'>Next</button>
+        <button onClick={handleNext} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] right-[40%]'>Next</button>
     </>
   )
 }

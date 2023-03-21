@@ -72,7 +72,7 @@ const LandingPage = () => {
           </div>
         </div>
           <div className='sm:hidden flex ml-14 text-[#FF008A] visby'>
-            <a>Get the app </a>
+            <a href="/">Get the app </a>
             <HiOutlineExternalLink className='ml-1 mt-1' />
           </div>
       </div>

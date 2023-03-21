@@ -1,10 +1,11 @@
 import { TextField } from '@mui/material'
 import React from 'react'
 
-const PersonalDetails = ({ setPage }) => {
+const PersonalDetails = ({ next, back, handleChange }) => {
 
-  const backClickHandler = () => {
-    setPage(prev => !prev)
+  const handleBack = e => {
+    e.preventDefault()
+    back()
   }
 
   return (
@@ -31,7 +32,7 @@ const PersonalDetails = ({ setPage }) => {
             <TextField id="standard-basic" type="date" variant="standard" className='w-8/12' />
         </div>
     </div>
-      <button onClick={backClickHandler} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] left-[20%]'>Back</button>
+      <button onClick={handleBack} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] left-[20%]'>Back</button>
       <button className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] right-[20%]'>Submit</button>
     </>
   )

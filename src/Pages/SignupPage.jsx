@@ -5,7 +5,28 @@ import SignupDetails from '../Components/SignupDetails'
 
 const SignupPage = () => {
 
-  const [page, setPage] = useState(true);
+  const [state, setState] = useState({
+    step : 1,
+    userName : "",
+    fullName : "",
+    email : "",
+    password : "",
+    confirmPassword : "",
+    city : "",
+    state : "",
+    country : "",
+    postalCode : "",
+    sex : "",
+  })
+
+  const next = () => setState(prev => ({...prev, step : prev.step + 1}))
+
+  const back = () => setState(prev => ({...prev, step : prev.step - 1}))
+
+  const handleChange = input => e => {
+    console.log(input)
+    // setState({input : e.target.value})
+  }
 
   return (
     <div>
@@ -15,8 +36,10 @@ const SignupPage = () => {
                 <p className='absolute left-[10%] top-[5%] text-3xl font-bold visby'>Sign up</p>
                 <div className='w-[80%] h-[1px] bg-[#e3e3e3] top-[15%] left-[10%] absolute' />
                 <div className='w-[80%] h-[80%] absolute left-[10%] top-[20%]'>
-                  {page && <SignupDetails setPage={setPage} />}
-                  {!page && <PersonalDetails setPage={setPage} />}
+                  
+                  {state.step===1 && <SignupDetails next={next} back={back} handleChange={handleChange} />}
+                  {state.step===2 && <PersonalDetails next={next} back={back} handleChange={handleChange} />}
+
                 </div>
             </div>
         </center>
@@ -25,4 +48,3 @@ const SignupPage = () => {
 }
 
 export default SignupPage
-
