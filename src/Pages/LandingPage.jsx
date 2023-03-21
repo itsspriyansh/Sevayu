@@ -33,7 +33,7 @@ const LandingPage = () => {
                     </p>
                     <nav className='mt-5 lg:pl-0 md:pl-1 sm:pl-10 transition-all ease-in-out'>
                       <Link to="/login">
-                        <button className='button md:block lg:inline-block sm:block bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium'>Login</button>
+                        <button className='button md:block lg:inline-block sm:block bg-[#FF008A] w-[8rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium '>Login</button>
                       </Link>
                       <Link to="/signup">
                         <button className='bg-white w-[8rem] h-[3rem] text-[#FF008A] rounded-md font-medium button hover:outline-[#ffffff]'>Sign up</button>
