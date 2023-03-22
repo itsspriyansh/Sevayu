@@ -24,9 +24,9 @@ const SignupPage = () => {
   const back = () => setState(prev => ({...prev, step : prev.step - 1}))
 
   const handleChange = input => e => {
-    console.log(input)
-    // setState({input : e.target.value})
+    setState(prev => ({...prev, [input] : e.target.value}))
   }
+
 
   return (
     <div>
@@ -37,8 +37,8 @@ const SignupPage = () => {
                 <div className='w-[80%] h-[1px] bg-[#e3e3e3] top-[15%] left-[10%] absolute' />
                 <div className='w-[80%] h-[80%] absolute left-[10%] top-[20%]'>
                   
-                  {state.step===1 && <SignupDetails next={next} back={back} handleChange={handleChange} />}
-                  {state.step===2 && <PersonalDetails next={next} back={back} handleChange={handleChange} />}
+                  {state.step===1 && <SignupDetails next={next} back={back} handleChange={handleChange} state={state} />}
+                  {state.step===2 && <PersonalDetails next={next} back={back} handleChange={handleChange} state={state} />}
 
                 </div>
             </div>
