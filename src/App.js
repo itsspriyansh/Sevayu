@@ -6,14 +6,27 @@ import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
 
 function App() {
+  const login = true;
+
   return (
     <div>
-      <Dashboard />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-      </Routes>
+      {
+        login ? (
+        <Routes>
+          <Route path="/appointments" element={<Dashboard />} />
+          <Route path="/medical-tests" element={<Dashboard />} />
+          <Route path="/doctors" element={<Dashboard />} />
+          <Route path="/blood-bank" element={<Dashboard />} />
+          <Route path="/add-appointment" element={<Dashboard />} />
+        </Routes>
+        ) : (
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+        )
+      }
     </div>
   );
 }
