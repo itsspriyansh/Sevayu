@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../Components/Navbar'
 import PersonalDetails from '../Components/PersonalDetails'
+import PhotoUpload from '../Components/PhotoUpload'
 import SignupDetails from '../Components/SignupDetails'
 
 const SignupPage = () => {
@@ -39,6 +40,7 @@ const SignupPage = () => {
                   
                   {state.step===1 && <SignupDetails next={next} back={back} handleChange={handleChange} state={state} />}
                   {state.step===2 && <PersonalDetails next={next} back={back} handleChange={handleChange} state={state} />}
+                  {state.step===3 && <PhotoUpload next={next} back={back} handleChange={handleChange} state={state} />}
 
                 </div>
             </div>

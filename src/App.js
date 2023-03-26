@@ -1,5 +1,5 @@
 // import { Route } from "react-router-dom";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
 import LandingPage from "./Pages/LandingPage";
 import LoginPage from "./Pages/LoginPage";
@@ -9,11 +9,11 @@ function App() {
   return (
     <div>
       <Dashboard />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

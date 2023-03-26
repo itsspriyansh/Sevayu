@@ -8,8 +8,8 @@ const Header = () => {
       <Link to="/">
         <img src={sevayu} alt="logo" className='w-[8rem] ml-3'></img>
       </Link>
-        <nav className='hidden sm:block'>
-          <ul className='flex xl:gap-12 gap-5 transition-all ease-in-out visby'>
+        <nav>
+          <ul className='flex xl:gap-12 gap-5 transition-all ease-in-out visby px-2'>
             <p className='md:block hidden'>Logout</p>
             <p className='block md:hidden'>menu</p>
           </ul>

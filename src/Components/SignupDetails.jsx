@@ -14,7 +14,7 @@ const SignupDetails = ({ next, handleChange, state }) => {
           id="standard-basic" 
           label="Username" 
           variant="standard" 
-          className='w-9/12' 
+          className='sm:w-9/12 w-full' 
           onChange={handleChange("userName")} 
           defaultValue={state.userName}
         />
@@ -23,7 +23,7 @@ const SignupDetails = ({ next, handleChange, state }) => {
           id="standard-basic" 
           label="Full Name"
           variant="standard" 
-          className='w-9/12' 
+          className='sm:w-9/12 w-full' 
           onChange={handleChange("fullName")} 
           defaultValue={state.fullName}
         />
@@ -34,7 +34,7 @@ const SignupDetails = ({ next, handleChange, state }) => {
           label="Email" 
           variant="standard" 
           type="email" 
-          className='w-9/12'
+          className='sm:w-9/12 w-full'
           onChange={handleChange("email")} 
           defaultValue={state.email}
         />
@@ -45,7 +45,7 @@ const SignupDetails = ({ next, handleChange, state }) => {
           label="Password" 
           variant="standard" 
           type="password" 
-          className='w-9/12'
+          className='sm:w-9/12 w-full'
           onChange={handleChange("password")} 
           defaultValue={state.password}
         />
@@ -56,12 +56,12 @@ const SignupDetails = ({ next, handleChange, state }) => {
           label="Confirm Password"
           variant="standard" 
           type="password" 
-          className='w-9/12'
+          className='sm:w-9/12 w-full'
           onChange={handleChange("confirmPassword")} 
           defaultValue={state.confirmPassword}
         />
         </div>
-        <button onClick={handleNext} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] right-[40%]'>Next</button>
+        <button onClick={handleNext} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] sm:right-[40%] right-[30%]'>Next</button>
     </>
   )
 }
