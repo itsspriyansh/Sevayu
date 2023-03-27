@@ -41,7 +41,7 @@ const SignupPage = () => {
                   {state.step===1 && <SignupDetails next={next} back={back} handleChange={handleChange} state={state} />}
                   {state.step===2 && <PersonalDetails next={next} back={back} handleChange={handleChange} state={state} />}
                   {state.step===3 && <PhotoUpload next={next} back={back} handleChange={handleChange} state={state} />}
-
+                  
                 </div>
             </div>
         </center>
