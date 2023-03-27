@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
 import LandingPage from "./Pages/LandingPage";
 import LoginPage from "./Pages/LoginPage";
@@ -33,9 +33,8 @@ function App() {
           <Route path="/doctors" element={<Dashboard />} />
           <Route path="/blood-bank" element={<Dashboard />} />
           <Route path="/add-appointment" element={<Dashboard />} />
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={isLoggedIn ? <Navigate replace to="/" /> : <LoginPage />} />
+          <Route path="/signup" element={isLoggedIn ? <Navigate replace to="/" /> : <SignupPage />} />
         </Routes>
     </div>
   );
