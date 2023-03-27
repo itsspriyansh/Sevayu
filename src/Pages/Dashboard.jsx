@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const { pathname } = useLocation()
   let content
-  if (pathname == "/appointments") content = <Appointments />
+  if (pathname == "/") content = <Appointments />
 
   return (
     <div>

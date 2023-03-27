@@ -8,7 +8,6 @@ const SignupPage = () => {
 
   const [state, setState] = useState({
     step : 1,
-    userName : "",
     fullName : "",
     email : "",
     password : "",
@@ -17,7 +16,8 @@ const SignupPage = () => {
     state : "",
     country : "",
     postalCode : "",
-    sex : "",
+    contact : "",
+    street : "",
   })
 
   const next = () => setState(prev => ({...prev, step : prev.step + 1}))

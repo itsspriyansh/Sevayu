@@ -10,8 +10,8 @@ const Sidebar = () => {
   return (
     <div>
         <ul className='flex flex-col items-start justify justify-center gap-12 visby'>
-          <Link to="/appointments">
-            <li className={location.pathname=="/appointments" ? css : ""}>Appointments</li>
+          <Link to="/">
+            <li className={location.pathname=="/" ? css : ""}>Appointments</li>
           </Link>
           <Link to="/medical-tests">
             <li className={location.pathname=="/medical-tests" ? css : ""}>Medical Tests</li>

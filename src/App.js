@@ -1,34 +1,45 @@
-// import { Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
 import LandingPage from "./Pages/LandingPage";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
+import { useUserState } from "./store/store";
 
 function App() {
-  const login = true;
+
+  const [checking, setChecking] = useState(true)
+  const { isLoggedIn, setIsLoggedIn } = useUserState()
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt")
+    if (token) setIsLoggedIn()
+    setChecking(prev => false)
+  }, [])
+
+  if (checking) {  
+    return (
+      <div className="flex justify-center items-center">
+        <div className="lds-heart"><div></div></div>
+      </div>
+      ) 
+  }
 
   return (
     <div>
-      {
-        login ? (
         <Routes>
-          <Route path="/appointments" element={<Dashboard />} />
+          <Route path="/" element={isLoggedIn ? <Dashboard /> : <LandingPage />} />
           <Route path="/medical-tests" element={<Dashboard />} />
           <Route path="/doctors" element={<Dashboard />} />
           <Route path="/blood-bank" element={<Dashboard />} />
           <Route path="/add-appointment" element={<Dashboard />} />
-        </Routes>
-        ) : (
-        <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
         </Routes>
-        )
-      }
     </div>
   );
 }
 
 export default App;
+

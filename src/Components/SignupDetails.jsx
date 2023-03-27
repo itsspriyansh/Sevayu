@@ -1,30 +1,31 @@
 import { TextField } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignupDetails = ({ next, handleChange, state }) => {
 
+  const errorBox = document.getElementById("errorBox")
+
   const handleNext = e => {
     e.preventDefault()
-    next()
+    if (state.password === state.confirmPassword) {
+      next()
+    } else {
+      errorBox.innerText = "password does not match!"
+      setTimeout(() => {
+        errorBox.innerText = ""
+      }, 5000);
+    }
   }
 
   return (
     <>
-        <TextField 
-          id="standard-basic" 
-          label="Username" 
-          variant="standard" 
-          className='sm:w-9/12 w-full' 
-          onChange={handleChange("userName")} 
-          defaultValue={state.userName}
-        />
         <div className='mt-[2.5rem]'>
         <TextField 
           id="standard-basic" 
-          label="Full Name"
+          label="Hospital Name"
           variant="standard" 
           className='sm:w-9/12 w-full' 
-          onChange={handleChange("fullName")} 
+          onChange={handleChange("fullName")}
           defaultValue={state.fullName}
         />
         </div>
@@ -45,7 +46,7 @@ const SignupDetails = ({ next, handleChange, state }) => {
           label="Password" 
           variant="standard" 
           type="password" 
-          className='sm:w-9/12 w-full'
+          className='sm:w-9/12 w-full pass'
           onChange={handleChange("password")} 
           defaultValue={state.password}
         />
@@ -56,12 +57,13 @@ const SignupDetails = ({ next, handleChange, state }) => {
           label="Confirm Password"
           variant="standard" 
           type="password" 
-          className='sm:w-9/12 w-full'
+          className='sm:w-9/12 w-full confpass'
           onChange={handleChange("confirmPassword")} 
           defaultValue={state.confirmPassword}
         />
         </div>
-        <button onClick={handleNext} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[5rem] rounded-md font-medium button absolute bottom-[10%] sm:right-[40%] right-[30%]'>Next</button>
+        <div id="errorBox" className='h-[3rem] w-full pt-4 text-red-400' />
+        <button onClick={handleNext} className='bg-[#FF008A] w-[8rem] h-[3rem] text-white mt-[2rem] rounded-md font-medium button absolute bottom-[10%] sm:right-[40%] right-[30%]'>Next</button>
     </>
   )
 }

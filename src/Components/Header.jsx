@@ -1,8 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import sevayu from "../images/Sevayu.svg"
+import { useUserState } from '../store/store'
+
 
 const Header = () => {
+
+  const { unsetIsLoggedIn } = useUserState()
+  const logoutHandler = () => {
+    localStorage.removeItem("jwt")
+    unsetIsLoggedIn()
+  }
+
   return (
     <div className='flex justify-between px-[2%] sm:px-[5%] py-[2rem] border-b-[1px] border-[#b6b6b6]'>
       <Link to="/">
@@ -10,8 +19,7 @@ const Header = () => {
       </Link>
         <nav>
           <ul className='flex xl:gap-12 gap-5 transition-all ease-in-out visby px-2'>
-            <p className='md:block hidden'>Logout</p>
-            <p className='block md:hidden'>menu</p>
+            <a onClick={logoutHandler} className='md:block hidden'>Logout</a>
           </ul>
         </nav>
     </div>
@@ -19,3 +27,4 @@ const Header = () => {
 }
 
 export default Header
+
