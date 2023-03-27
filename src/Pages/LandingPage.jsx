@@ -57,7 +57,7 @@ const LandingPage = () => {
         </div>
 
 
-      <div className='mx-auto w-10/12 mt-[8rem] max-w-[75rem]'>
+      <div className='mx-auto w-10/12 mt-[8rem] max-w-[75rem]' id='mobile'>
         <div className='sm:block flex'>
           <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA] animate__animated animate__fadeInLeft'>02</p>
           <p className='sm:hidden block text-3xl pl-5 visby animate__animated animate__bounceIn animate__delay-0.5s'>Our Mobile App is Fast, Reliable and <span className='font-bold'>Easy to Use</span></p>
@@ -67,7 +67,7 @@ const LandingPage = () => {
             <img src={mobile} alt="mobile" className='w-full h-full object-cover'></img>
           </div>
           <div className='xl:pt-[10rem] pt-[5rem] xl:text-[2.5rem] text-[2rem] md:leading-[3rem] leading-[2.5rem] sm:block hidden xl:pl-24 transition-all ease-in-out visby animate__animated animate__bounceIn animate__delay-0.5s'>
-            <p>Our Mobile App is Fast, Reliable <br /> <span className='font-bold'>Easy to Use</span></p>
+            <p>Our Mobile App is Fast, Reliable and <br /> <span className='font-bold'>Easy to Use</span></p>
             <button className='button bg-[#FF008A] w-[9rem] h-[3rem] text-white mr-3 my-2 rounded-md font-medium text-[1rem] mt-8 font-sans flex justify-center'>Get the app<HiOutlineExternalLink className='ml-1 mt-4' /></button>
           </div>
         </div>
@@ -78,7 +78,7 @@ const LandingPage = () => {
       </div>
 
 
-      <div className='w-full h-[40rem] bg-[#3B59FA] mt-12'>
+      <div className='w-full h-[40rem] bg-[#3B59FA] mt-12' id='about'>
         <div className='mx-auto w-10/12 h-full flex max-w-[75rem]'>
           <p className=' text-6xl xl:ml-[-5rem] transition-all ease-in-out text-white mt-14 akshar animate__animated animate__fadeInLeft'>03</p>
           <div className='flex justify-between w-full'>
@@ -99,7 +99,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='mx-auto w-10/12 mt-12 max-w-[75rem] h-[60rem]'>
+      <div className='mx-auto w-10/12 mt-12 max-w-[75rem] h-[60rem]' id='contact'>
         <p className='mt-24 text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA] animate__animated animate__fadeInLeft'>04</p>
         <div className='lg:w-10/12 w-full transition-all ease-in-out'>
           <ContactUs />

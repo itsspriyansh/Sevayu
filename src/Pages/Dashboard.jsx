@@ -14,14 +14,14 @@ const Dashboard = () => {
     <div>
         <Header />
         <div className='flex h-full'>
-            <div className='bg-white w-[25%] max-w-[20rem] hidden md:block pt-24 px-12'>
+            <div className='bg-white w-[25%] max-w-[20rem] hidden md:block pt-24 px-12 animate__animated animate__fadeInLeft'>
                 <Sidebar />
             </div>
             <div className='bg-[#EAF1F6] min-h-[90vh] md:w-[80%] lg:w-[70%] w-full px-4'>
               {content}
             </div>
             <div className='bg-[#EAF1F6] w-[20%] hidden lg:block'>
-              <div className='w-[90%] py-5 px-5 xl:px-10 bg-white mt-5 rounded-xl visby'>
+              <div className='w-[90%] py-5 px-5 xl:px-10 bg-white mt-5 rounded-xl visby animate__animated animate__fadeInRight'>
                 <center>Primary Health Center IIITDM Jabalpur</center>
               </div>
             </div>

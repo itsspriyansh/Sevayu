@@ -7,9 +7,11 @@ import { Navigate } from 'react-router-dom'
 
 const LoginPage = () => {
 
-  const [state, setState] = useState({ email : "", password : ""})
   const { isLoggedIn, setIsLoggedIn } = useUserState()
+
+  const [state, setState] = useState({ email : "", password : ""})
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = input => e => {
     e.preventDefault()
@@ -19,9 +21,20 @@ const LoginPage = () => {
   const loginHandler = async () => {
     setLoading(prev => true)
     try {
+
       const token = await login(state)
-      localStorage.setItem("jwt", token)
-      setIsLoggedIn()
+      if (token) {
+        localStorage.setItem("jwt", token)
+        setIsLoggedIn()
+      } else {
+        setLoading(prev => false)
+        setError(prev => true)
+
+        setTimeout(() => {
+          setError(prev => false)
+        }, 3000);
+      }
+      
     } catch (error) {
       console.log(error)
     }
@@ -29,7 +42,9 @@ const LoginPage = () => {
 
   if (isLoggedIn) {
     return <Navigate replace to="/" />
-  } else if (loading) {
+  } 
+  
+  else if (loading) {
     return (
         <div>
         <Navbar />
@@ -44,7 +59,9 @@ const LoginPage = () => {
           </center>
         </div>
       )
-  } else {
+  } 
+  
+  else {
     return (
       <div>
           <Navbar />
@@ -69,6 +86,10 @@ const LoginPage = () => {
                         variant="standard" 
                         type="password" 
                         className='w-full sm:w-9/12' />
+
+                      <div className='w-full h-[5rem] flex justify-center items-center text-red-500 visby'>
+                        {error && "Invalid Credentials!"}
+                      </div>
 
                       <button 
                         onClick={loginHandler} 
