@@ -20,6 +20,7 @@ const PhotoUpload = ({ back, state, next }) => {
 
     const submitHandler = async () => {
       setLoading(prev => true)
+
       const data = {
         name : state.fullName,
         email : state.email, 
@@ -32,9 +33,14 @@ const PhotoUpload = ({ back, state, next }) => {
         state : state.state,
         images : [{id : "1", url : "imsdf"}]
       }
-      const token = await register(data)
-      localStorage.setItem("jwt", token)
-      setIsLoggedIn()
+
+      try {
+        const token = await register(data)
+        localStorage.setItem("jwt", token)
+        setIsLoggedIn()
+      } catch (error) {
+        console.log(error)
+      }
     }
 
     if (isLoggedIn) {
