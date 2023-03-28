@@ -22,3 +22,8 @@ export const login = async data => {
     const token = await res.json()
     return token.accessToken
 }
+
+export const getHospitalData = async (userId) => {
+    const res = await fetch(`https://sevayu-server.onrender.com/api/hospital/hospital/${userId}`)
+    
+}

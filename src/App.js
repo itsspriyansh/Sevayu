@@ -1,3 +1,4 @@
+import jwtDecode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
@@ -14,6 +15,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt")
     if (token) setIsLoggedIn()
+    console.log(jwtDecode(token))
     setChecking(prev => false)
   }, [])
 

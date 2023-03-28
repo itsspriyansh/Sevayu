@@ -10,6 +10,8 @@ const Dashboard = () => {
   let content
   if (pathname == "/") content = <Appointments />
 
+  
+
   return (
     <div>
         <Header />
@@ -22,7 +24,9 @@ const Dashboard = () => {
             </div>
             <div className='bg-[#EAF1F6] w-[20%] hidden lg:block'>
               <div className='w-[90%] py-5 px-5 xl:px-10 bg-white mt-5 rounded-xl visby animate__animated animate__fadeInRight'>
-                <center>Primary Health Center IIITDM Jabalpur</center>
+              <center className='font-bold text-[1.1rem]'>Fortis Jaipur</center>
+                <center>Malviya Nagar, Patrika Gate Road - 302015 </center>
+                <center className='text-[#737373] text-[1rem] mt-2'>+91 9827364738</center>
               </div>
             </div>
         </div>
