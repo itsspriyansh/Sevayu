@@ -15,7 +15,6 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt")
     if (token) setIsLoggedIn()
-    console.log(jwtDecode(token))
     setChecking(prev => false)
   }, [])
 

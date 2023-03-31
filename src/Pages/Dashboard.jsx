@@ -1,17 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import Sidebar from '../Components/Sidebar'
 import Appointments from './Dashboard/Appointments'
+import Doctors from './Dashboard/Doctors'
 import { useLocation } from 'react-router-dom'
+import jwtDecode from 'jwt-decode'
+import { getHospitalData } from '../utils/api'
+import { useUserState } from '../store/store'
 
 const Dashboard = () => {
+
+  const [loading, setLoading] = useState(true)
+  const { hospitalData, setHospitalData } = useUserState()
 
   const { pathname } = useLocation()
   let content
   if (pathname == "/") content = <Appointments />
+  else if (pathname == "/doctors") content = <Doctors />
 
+  const token = localStorage.getItem("jwt")
+  const { id } = jwtDecode(token)
+
+  useEffect(() => {
+    (async () => {
+      const res = await getHospitalData(id)
+      await setHospitalData(res)
+      setLoading(prev => false)
+    })()
+  }, [])
+
+
+  if (loading) {
+    return (
+      <div>
+        loading...
+      </div>
+    )
+  }
   
-
   return (
     <div>
         <Header />
@@ -24,9 +50,9 @@ const Dashboard = () => {
             </div>
             <div className='bg-[#EAF1F6] w-[20%] hidden lg:block'>
               <div className='w-[90%] py-5 px-5 xl:px-10 bg-white mt-5 rounded-xl visby animate__animated animate__fadeInRight'>
-              <center className='font-bold text-[1.1rem]'>Fortis Jaipur</center>
-                <center>Malviya Nagar, Patrika Gate Road - 302015 </center>
-                <center className='text-[#737373] text-[1rem] mt-2'>+91 9827364738</center>
+              <center className='font-bold text-[1.1rem]'>{hospitalData.name}</center>
+                <center>{`${hospitalData.street}, ${hospitalData.city} - ${hospitalData.postalcode}`}</center>
+                <center className='text-[#737373] text-[1rem] mt-2'>{`${hospitalData.contact}`}</center>
               </div>
             </div>
         </div>

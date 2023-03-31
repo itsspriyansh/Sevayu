@@ -19,7 +19,7 @@ const PersonalDetails = ({ next, back, handleChange, state }) => {
         <div>
         <TextField id="standard-basic" 
           defaultValue={state.postalCode} 
-          label="Street" 
+          label="Street / Locality" 
           variant="standard" 
           className='sm:w-9/12 w-full' 
           onChange={handleChange("street")} />
