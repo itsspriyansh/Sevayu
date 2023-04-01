@@ -23,21 +23,30 @@ export const login = async data => {
     return token.accessToken
 }
 
-export const getHospitalData = async userId => {
-    const res = await fetch(`https://sevayu-server.onrender.com/api/hospital/hospital/${userId}`)
+export const getHospitalData = async hospitalId => {
+    const res = await fetch(`https://sevayu-server.onrender.com/api/hospital/hospital/${hospitalId}`)
     const data = await res.json()
     return data
 }
 
 export const getDoctors = async hospitalId => {
-    const res = await fetch(`https://sevayu-server.onrender.com/api/doctor/getAll`, {
-        method : "GET",
-        body : JSON.stringify({hospitalid : hospitalId}),
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    })
+    const res = await fetch(`https://sevayu-server.onrender.com/api/doctor/getAll/${hospitalId}`)
     const data = await res.json()
-    console.log(data)
     return data
+}
+
+export const registerDoctor = async doctorData => {
+    try {
+        const res = await fetch(`https://sevayu-server.onrender.com/api/doctor/register`, {
+            method : "POST",
+            body : JSON.stringify(doctorData),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        const data = await res.json()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
 }

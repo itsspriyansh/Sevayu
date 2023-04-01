@@ -19,11 +19,11 @@ const Dashboard = () => {
   else if (pathname == "/doctors") content = <Doctors />
 
   const token = localStorage.getItem("jwt")
-  const { id } = jwtDecode(token)
+  const { HospitalId } = jwtDecode(token)
 
   useEffect(() => {
     (async () => {
-      const res = await getHospitalData(id)
+      const res = await getHospitalData(HospitalId)
       await setHospitalData(res)
       setLoading(prev => false)
     })()
@@ -39,7 +39,8 @@ const Dashboard = () => {
   }
   
   return (
-    <div>
+    <>
+    <div className='relative'>
         <Header />
         <div className='flex h-full'>
             <div className='bg-white w-[25%] max-w-[20rem] hidden md:block pt-24 px-12 animate__animated animate__fadeInLeft'>
@@ -57,6 +58,7 @@ const Dashboard = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 
