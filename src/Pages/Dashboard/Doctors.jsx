@@ -17,11 +17,11 @@ const Doctors = () => {
     const [backDrop, setBackDrop] = useState(false)
     const [payload, setPayload] = useState({
       id : nanoid(), 
-      name :"yogi", 
-      experience :"4yr", 
-      speciality : "dermatologist", 
-      contact : "9874563214", 
-      department : "koidept",
+      name :"", 
+      experience :"", 
+      speciality : "", 
+      contact : "", 
+      department : "",
       Intime : "meraintime",
       Outtime : "thisis",
       days : ["ghv","nj"]
@@ -45,13 +45,21 @@ const Doctors = () => {
     useEffect(() => {
         (async () => {
             const res = await getDoctors(hospitalData._id)
-            setDoctors(res)
+            await setDoctors(res)
         })()
     }, [])
 
     const addDoctorHandler = () => {
       console.log(doctors)
       setBackDrop(prev => true)
+    }
+
+    if (!doctors) {
+      return (
+        <div>
+          loading...
+        </div>
+      )
     }
 
     return (
@@ -72,13 +80,11 @@ const Doctors = () => {
               <div className='w-full flex justify-center py-10'>
                 <input className='w-10/12 h-12 rounded-3xl px-5 text-gray-500 focus:outline-none' placeholder='Search...'></input>
               </div>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
-            <ListItem><DoctorContent /></ListItem>
+            {
+              doctors.map((item, idx) => {
+                return <ListItem idx={idx} key={idx} color={color}><DoctorContent item={item} idx={idx} key={idx} /></ListItem>
+              })
+            }
           </div>
       </div>
 
@@ -91,4 +97,3 @@ const Doctors = () => {
 }
 
 export default Doctors
-

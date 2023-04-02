@@ -23,13 +23,13 @@ const Appointments = () => {
                 <li>Doctor Details</li>
             </ul>
 
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
-            <ListItem><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
+            <ListItem color={color} idx={1}><AppointmentContent /></ListItem>
 
         </div>
     </div>

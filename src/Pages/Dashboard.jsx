@@ -46,7 +46,7 @@ const Dashboard = () => {
             <div className='bg-white w-[25%] max-w-[20rem] hidden md:block pt-24 px-12 animate__animated animate__fadeInLeft'>
                 <Sidebar />
             </div>
-            <div className='bg-[#EAF1F6] min-h-[90vh] md:w-[80%] lg:w-[70%] w-full px-4'>
+            <div className='bg-[#EAF1F6] min-h-[90vh] md:w-[80%] lg:w-[70%] w-full px-4 pb-24'>
               {content}
             </div>
             <div className='bg-[#EAF1F6] w-[20%] hidden lg:block'>
