@@ -31,14 +31,14 @@ function App() {
         <Routes>
           <Route path="/" element={isLoggedIn ? <Dashboard /> : <LandingPage />} />
           <Route path="/medical-tests" element={<Dashboard />} />
-          <Route path="/doctors" element={<Dashboard />} />
-          <Route path="/blood-bank" element={<Dashboard />} />
-          <Route path="/add-appointment" element={<Dashboard />} />
+          <Route path="/doctors" element={!isLoggedIn ? <Navigate replace to="/" /> : <Dashboard />} />
+          <Route path="/blood-bank" element={!isLoggedIn ? <Navigate replace to="/" /> : <Dashboard />} />
+          <Route path="/add-appointment" element={!isLoggedIn ? <Navigate replace to="/" /> : <Dashboard />} />
           <Route path="/login" element={isLoggedIn ? <Navigate replace to="/" /> : <LoginPage />} />
           <Route path="/signup" element={isLoggedIn ? <Navigate replace to="/" /> : <SignupPage />} />
         </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

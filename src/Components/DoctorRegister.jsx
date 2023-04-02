@@ -9,6 +9,7 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
 
     const submitHandler = () => {
         registerDoctorHandler()
+        setBackDrop(prev => false)
     }
 
   return (
@@ -16,11 +17,12 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
     <div className='absolute top-0 bottom-0 right-0 left-0 bg-black opacity-50 z-10' />
 
     <div className='absolute z-20 top-0 bottom-0 right-0 left-0 flex justify-center'>
-      <div className='bg-white w-[35rem] h-[40rem] sticky top-[10rem] rounded-2xl mx-5 z-30'>
-        <div className='flex justify-end px-5'>
-            <button onClick={removeBackDrop}>close</button>
-        </div>
-        <div className='flex flex-col gap-3 px-20 pt-20'>
+      <div className='bg-white w-[35rem] h-[40rem] sticky top-[3rem] sm:top-[10rem] rounded-2xl mx-5 z-30 animate__animated animate__fadeInLeft'>
+        <p className='absolute left-6 sm:left-20 top-10 font-bold text-[1.3rem]'>Add Doctor</p>
+            <button
+              className='absolute right-8 top-5 underline' 
+              onClick={removeBackDrop}>cancel</button>
+        <div className='flex flex-col gap-3 px-5 sm:px-20 pt-20'>
             
           <TextField
             onChange={handleChange("name")}
@@ -45,17 +47,17 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
 
           <div className='flex justify-between w-full'>
             <div className='w-[40%]'>
-              <p className='w-full'>In Time</p>
-              <input type='time' className='w-full'></input>
+              <p className='w-full text-gray-500'>In Time</p>
+              <input type='time' className='w-full' onChange={handleChange("Intime")}></input>
             </div>
             <div className='w-[40%]'>
-              <p className='w-full'>Out Time</p>
-              <input type='time' className='w-full'></input>
+              <p className='w-full text-gray-500'>Out Time</p>
+              <input type='time' className='w-full' onChange={handleChange("Outtime")}></input>
             </div>
           </div>
         </div>
         <button 
-            className="absolute bottom-24 right-24"
+            className="absolute bottom-14 right-[5%] sm:right-[15%] bg-[#FF008A] px-5 py-2 rounded-lg text-white visby font-medium"
             onClick={submitHandler}> Submit </button>
       </div>
     </div>
@@ -64,3 +66,4 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
 }
 
 export default DoctorRegister
+

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import sevayu from "../images/Sevayu.svg"
 import { useUserState } from '../store/store'
 
@@ -27,4 +27,3 @@ const Header = () => {
 }
 
 export default Header
-

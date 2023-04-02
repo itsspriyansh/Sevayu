@@ -49,11 +49,12 @@ const LoginPage = () => {
         <div>
         <Navbar />
         <center>
-            <div id='loginbox' className='bg-white sm:w-[35rem] w-[25rem] h-[35rem] mt-[5rem] rounded-3xl shadow-black drop-shadow-2xl transition-all ease-in-out animate__animated animate__fadeInLeft'>
+            <div id='loginbox' className='bg-white mx-2 sm:w-[35rem] w-[22rem] h-[35rem] mt-[5rem] rounded-3xl shadow-black drop-shadow-2xl transition-all ease-in-out animate__animated animate__fadeInLeft'>
                 <p className='absolute left-[10%] top-[5%] text-3xl font-bold visby'>Login</p>
                 <div className='w-[80%] h-[1px] bg-[#e3e3e3] top-[15%] left-[10%] absolute' />
                 <div className='w-[80%] h-[80%] absolute left-[10%] top-[25%]'>
                 <div><div className="lds-heart"><div></div></div></div>
+                <p className='text-red-400 visby font-light'>Verifying Credentials</p>
                 </div>
                 </div>
           </center>
@@ -66,7 +67,7 @@ const LoginPage = () => {
       <div>
           <Navbar />
           <center>
-              <div id='loginbox' className='bg-white sm:w-[35rem] w-[25rem] h-[35rem] mt-[5rem] rounded-3xl shadow-black drop-shadow-2xl transition-all ease-in-out animate__animated animate__fadeInLeft'>
+              <div id='loginbox' className='bg-white mx-2 sm:w-[35rem] w-[22rem] h-[35rem] mt-[5rem] rounded-3xl shadow-black drop-shadow-2xl transition-all ease-in-out animate__animated animate__fadeInLeft'>
                   <p className='absolute left-[10%] top-[5%] text-3xl font-bold visby'>Login</p>
                   <div className='w-[80%] h-[1px] bg-[#e3e3e3] top-[15%] left-[10%] absolute' />
                   <div className='w-[80%] h-[80%] absolute left-[10%] top-[25%]'>

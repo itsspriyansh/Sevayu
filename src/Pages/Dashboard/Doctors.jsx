@@ -9,11 +9,15 @@ import { nanoid } from 'nanoid'
 
 const Doctors = () => {
     const cardContent = ["Total Doctors", "Total Patients", "Average Patient per Doctor"]
-    const color = ["#00FF29", "#FFA800", "#FF008A"]
-
+    const color = ["#FF008A", "#FF005A", "#FF008A"]
+    
     const { hospitalData } = useUserState()
     const { doctors, setDoctors } = useDoctors()
+    
+    const cardValues = [doctors.length, "48"]
+    cardValues.push(parseInt(cardValues[1]) / cardValues[0])
 
+    const [hovering, setHovering] = useState(false)
     const [backDrop, setBackDrop] = useState(false)
     const [payload, setPayload] = useState({
       id : nanoid(), 
@@ -22,8 +26,8 @@ const Doctors = () => {
       speciality : "", 
       contact : "", 
       department : "",
-      Intime : "meraintime",
-      Outtime : "thisis",
+      Intime : "",
+      Outtime : "",
       days : ["ghv","nj"]
     })
 
@@ -67,22 +71,27 @@ const Doctors = () => {
       <div className='w-full'>
           <div className='w-full h-[15rem] py-5 justify-around sm:flex hidden'>
             {
-              cardContent.map((text, idx) => <DataCard text={text} key={idx} />)
+              cardContent.map((text, idx) => <DataCard value={cardValues[idx]} text={text} key={idx} />)
             }
           </div>
           <div className='w-full mt-24'>
+            <div className='w-full flex justify-between'>
+
               <p className='font-bold text-[1.8rem] visby ml-5 sm:mb-0 mb-5 inline'>Doctors</p>
               <button 
-                className=' inline ml-5 border-solid border-black'
+                className=' inline ml-5 sm:bg-[#FF008A] text-[#FF008A] underline underline-offset-2 sm:no-underline sm:text-white px-3 rounded-lg sm:font-bold visby'
                 onClick={addDoctorHandler}>
-                  Add
+                  Add Doctor
               </button>
+            </div>
               <div className='w-full flex justify-center py-10'>
                 <input className='w-10/12 h-12 rounded-3xl px-5 text-gray-500 focus:outline-none' placeholder='Search...'></input>
               </div>
             {
               doctors.map((item, idx) => {
-                return <ListItem idx={idx} key={idx} color={color}><DoctorContent item={item} idx={idx} key={idx} /></ListItem>
+                return (<ListItem setHovering={setHovering} idx={idx} key={idx} color={color}>
+                          <DoctorContent hovering={hovering} item={item} idx={idx} key={idx} />
+                        </ListItem>)
               })
             }
           </div>

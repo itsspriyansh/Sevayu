@@ -7,17 +7,19 @@ import { useLocation } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 import { getHospitalData } from '../utils/api'
 import { useUserState } from '../store/store'
+import { Navigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
+  
   const [loading, setLoading] = useState(true)
-  const { hospitalData, setHospitalData } = useUserState()
-
+  const { hospitalData, setHospitalData, isLoggedIn } = useUserState()
+  
   const { pathname } = useLocation()
   let content
-  if (pathname == "/") content = <Appointments />
-  else if (pathname == "/doctors") content = <Doctors />
-
+  if (pathname === "/") content = <Appointments />
+  else if (pathname === "/doctors") content = <Doctors />
+  
   const token = localStorage.getItem("jwt")
   const { HospitalId } = jwtDecode(token)
 
@@ -29,17 +31,19 @@ const Dashboard = () => {
     })()
   }, [])
 
-
+  
   if (loading) {
     return (
-      <div>
-        loading...
-      </div>
+      <center className='mt-[40vh]'>
+        <div><div className="lds-heart"><div></div></div></div>
+        <p className='text-red-400 visby font-light'>Sevayu is loading</p>
+      </center>
     )
   }
   
   return (
     <>
+    {!isLoggedIn && <Navigate replace to="/" />}
     <div className='relative'>
         <Header />
         <div className='flex h-full'>
