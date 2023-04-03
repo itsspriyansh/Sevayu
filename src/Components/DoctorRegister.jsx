@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextField } from '@mui/material'
+import DaySelector from './DaySelector'
 
 const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) => {
 
@@ -17,7 +18,7 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
     <div className='absolute top-0 bottom-0 right-0 left-0 bg-black opacity-50 z-10' />
 
     <div className='absolute z-20 top-0 bottom-0 right-0 left-0 flex justify-center'>
-      <div className='bg-white w-[35rem] h-[40rem] sticky top-[3rem] sm:top-[10rem] rounded-2xl mx-5 z-30 animate__animated animate__fadeInLeft'>
+      <div className='bg-white w-[35rem] h-[44rem] sticky top-[3rem] sm:top-[10rem] rounded-2xl mx-5 z-30 animate__animated animate__fadeInLeft'>
         <p className='absolute left-6 sm:left-20 top-10 font-bold text-[1.3rem]'>Add Doctor</p>
             <button
               className='absolute right-8 top-5 underline' 
@@ -55,6 +56,9 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
               <input type='time' className='w-full' onChange={handleChange("Outtime")}></input>
             </div>
           </div>
+
+          <DaySelector />
+
         </div>
         <button 
             className="absolute bottom-14 right-[5%] sm:right-[15%] bg-[#FF008A] px-5 py-2 rounded-lg text-white visby font-medium"

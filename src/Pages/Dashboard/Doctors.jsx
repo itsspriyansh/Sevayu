@@ -88,11 +88,7 @@ const Doctors = () => {
                 <input className='w-10/12 h-12 rounded-3xl px-5 text-gray-500 focus:outline-none' placeholder='Search...'></input>
               </div>
             {
-              doctors.map((item, idx) => {
-                return (<ListItem setHovering={setHovering} idx={idx} key={idx} color={color}>
-                          <DoctorContent hovering={hovering} item={item} idx={idx} key={idx} />
-                        </ListItem>)
-              })
+              doctors.map((item, idx) => <DoctorContent setHovering={setHovering} hovering={hovering} item={item} idx={idx} key={idx} />)
             }
           </div>
       </div>

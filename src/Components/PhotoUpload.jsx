@@ -46,7 +46,11 @@ const PhotoUpload = ({ back, state, next }) => {
     if (isLoggedIn) {
       return <Navigate replace to="/" />
     } else if (loading) {
-      return <div><div className="lds-heart"><div></div></div></div>
+      return (
+      <>
+        <div><div className="lds-heart"><div></div></div></div>
+        <p className='text-red-400 visby font-light'>Signing in</p>
+      </>)
     } else {
       return (
         <>
@@ -59,4 +63,3 @@ const PhotoUpload = ({ back, state, next }) => {
 }
 
 export default PhotoUpload
-
