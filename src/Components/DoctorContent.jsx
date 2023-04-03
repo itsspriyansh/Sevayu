@@ -10,6 +10,17 @@ const DoctorContent = ({ item }) => {
   const hoverHandler = () => setHovering(prev => true)
   const leaveHandler = () => setHovering(prev => false)
 
+  const week = ["Sun" ,"Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  let daysArray = []
+
+  week.forEach(day => {
+    if (days.includes(day)) {
+      daysArray.push(day)
+    }
+  })
+
+  let dayString = daysArray.join(", ")
+
   let content = (<>
     <div className='sm:ml-[6%]'>
       <p>{`Department: ${department}`}</p>
@@ -17,7 +28,7 @@ const DoctorContent = ({ item }) => {
     </div>
     <div>
       <p>{`Available from ${Intime} to ${Outtime}`}</p>
-      <p>{`Available on: Sun, Mon, Tue, Wed, Thr, Fri, Sat`}</p>
+      <p>{`Available on: ${dayString}`}</p>
     </div>
   </>)
 

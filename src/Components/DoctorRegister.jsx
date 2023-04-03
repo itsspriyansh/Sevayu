@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField } from '@mui/material'
-import DaySelector from './DaySelector'
+import DayIcon from './DayIcon'
 
 const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) => {
 
@@ -12,6 +12,8 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
         registerDoctorHandler()
         setBackDrop(prev => false)
     }
+
+    const days = [['S', 'Sun'], ['M', 'Mon'], ['T', 'Tue'], ['W', 'Wed'], ['T', 'Thu'], ['F', 'Fri'], ['S', 'Sat']]
 
   return (
     <>
@@ -57,7 +59,10 @@ const DoctorRegister = ({ setBackDrop, handleChange, registerDoctorHandler }) =>
             </div>
           </div>
 
-          <DaySelector />
+          <p className='text-gray-500'>Available on: </p>
+          <div className='flex w-[17rem] justify-between' id='days'>
+            {days.map(day => <DayIcon initial={day[0]} day={day[1]} key={day[1]} />)}
+          </div>
 
         </div>
         <button 

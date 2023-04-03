@@ -12,3 +12,8 @@ export const useDoctors = create(set => ({
     doctors : [],
     setDoctors : (data) => set(state => ({...state, doctors : data}))
 }))
+
+export const useDayList = create(set => ({
+    daysList : [],
+    setDaysList : (data) => set(state => ({...state, daysList : data}))
+}))

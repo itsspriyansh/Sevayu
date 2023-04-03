@@ -3,20 +3,19 @@ import DataCard from '../../Components/DataCard'
 import DoctorContent from '../../Components/DoctorContent'
 import ListItem from '../../Components/ListItem'
 import { getDoctors, registerDoctor } from '../../utils/api'
-import { useDoctors, useUserState } from '../../store/store'
+import { useDayList, useDoctors, useUserState } from '../../store/store'
 import DoctorRegister from '../../Components/DoctorRegister'
 import { nanoid } from 'nanoid'
 
 const Doctors = () => {
-    const cardContent = ["Total Doctors", "Total Patients", "Average Patient per Doctor"]
-    const color = ["#FF008A", "#FF005A", "#FF008A"]
-    
+  const cardContent = ["Total Doctors", "Total Patients", "Average Patient per Doctor"]
+  const color = ["#FF008A", "#FF005A", "#FF008A"]
+  
     const { hospitalData } = useUserState()
     const { doctors, setDoctors } = useDoctors()
-    
-    const cardValues = [doctors.length, "48"]
-    cardValues.push(parseInt(cardValues[1]) / cardValues[0])
+    const { daysList } = useDayList()
 
+    
     const [hovering, setHovering] = useState(false)
     const [backDrop, setBackDrop] = useState(false)
     const [payload, setPayload] = useState({
@@ -28,13 +27,18 @@ const Doctors = () => {
       department : "",
       Intime : "",
       Outtime : "",
-      days : ["ghv","nj"]
+      days : []
     })
+    
 
+    const cardValues = [doctors.length, "48"]
+    cardValues.push(parseInt(parseInt(cardValues[1]) / cardValues[0]))
+
+    
     const handleChange = input => e => {
       setPayload(prev => ({...prev, [input] : e.target.value}))
     }
-
+    
     const registerDoctorHandler = async () => {
       const doctorData = {
         hospitalid : hospitalData._id,
@@ -47,14 +51,18 @@ const Doctors = () => {
     }
 
     useEffect(() => {
-        (async () => {
-            const res = await getDoctors(hospitalData._id)
-            await setDoctors(res)
-        })()
+      setPayload(prev => ({...prev, days: daysList}))
+    }, [daysList])
+    
+    useEffect(() => {
+      (async () => {
+        const res = await getDoctors(hospitalData._id)
+        await setDoctors(res)
+      })()
     }, [])
+    
 
     const addDoctorHandler = () => {
-      console.log(doctors)
       setBackDrop(prev => true)
     }
 
