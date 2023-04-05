@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataCard from '../../Components/DataCard'
 import DoctorContent from '../../Components/DoctorContent'
-import ListItem from '../../Components/ListItem'
 import { getDoctors, registerDoctor } from '../../utils/api'
 import { useDayList, useDoctors, useUserState } from '../../store/store'
 import DoctorRegister from '../../Components/DoctorRegister'
@@ -29,7 +28,7 @@ const Doctors = () => {
       Outtime : "",
       days : []
     })
-    
+
 
     const cardValues = [doctors.length, "48"]
     cardValues.push(parseInt(parseInt(cardValues[1]) / cardValues[0]))

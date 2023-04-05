@@ -26,7 +26,7 @@ const DoctorContent = ({ item }) => {
       <p>{`Department: ${department}`}</p>
       <p>{`Experience: ${experience}`}</p>
     </div>
-    <div>
+    <div className='sm:absolute sm:left-[70%]'>
       <p>{`Available from ${Intime} to ${Outtime}`}</p>
       <p>{`Available on: ${dayString}`}</p>
     </div>
@@ -49,7 +49,7 @@ const DoctorContent = ({ item }) => {
           </div>
         </li>
 
-        <li className='sm:w-[35%] flex sm:block text-center'>
+        <li className='sm:absolute sm:left-[70%] flex sm:block text-center'>
           {speciality}
         </li>
       </ul>

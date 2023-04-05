@@ -18,8 +18,16 @@ const Header = () => {
         <img src={sevayu} alt="logo" className='w-[8rem] ml-3'></img>
       </Link>
         <nav>
-          <ul className='flex xl:gap-12 gap-5 transition-all ease-in-out visby px-2'>
-            <a onClick={logoutHandler} className='md:block hidden'>Logout</a>
+          <ul className='flex xl:gap-8 gap-5 transition-all ease-in-out visby px-2'>
+            <Link to="/blogs">
+              <a className='md:block hidden'>Blogs</a>
+            </Link>
+            <Link to="/">
+              <a className='md:block hidden'>Dashboard</a>
+            </Link>
+            <Link to="/">
+              <a onClick={logoutHandler} className='md:block hidden'>Logout</a>
+            </Link>
           </ul>
         </nav>
     </div>
