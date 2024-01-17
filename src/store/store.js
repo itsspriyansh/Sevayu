@@ -8,12 +8,12 @@ export const useUserState = create(set => ({
     setHospitalData : (data) => set(state => ({...state, hospitalData : data})),
 }))
 
-export const useDoctors = create(set => ({
-    doctors : [],
-    setDoctors : (data) => set(state => ({...state, doctors : data}))
-}))
-
 export const useDayList = create(set => ({
     daysList : [],
     setDaysList : (data) => set(state => ({...state, daysList : data}))
+}))
+
+export const useDoctors = create(set => ({
+    doctors : [],
+    setDoctors : (data) => set(state => ({...state, doctors : data}))
 }))

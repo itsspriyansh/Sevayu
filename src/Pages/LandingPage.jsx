@@ -99,7 +99,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='mx-auto w-10/12 mt-12 max-w-[75rem] h-[60rem]' id='contact'>
+      <div className='mx-auto w-10/12 mt-12 max-w-[75rem] h-[40rem]' id='contact'>
         <p className='mt-24 text-6xl xl:ml-[-5rem] transition-all ease-in-out akshar text-[#3B59FA] animate__animated animate__fadeInLeft'>04</p>
         <div className='lg:w-10/12 w-full transition-all ease-in-out'>
           <ContactUs />

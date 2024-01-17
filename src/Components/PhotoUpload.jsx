@@ -1,5 +1,6 @@
+import React from 'react'
 import { useState } from 'react'
-import { Navigate, redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { useUserState } from '../store/store'
 import { register } from '../utils/api'
 

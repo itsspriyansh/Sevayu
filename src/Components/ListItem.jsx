@@ -9,7 +9,6 @@ const ListItem = (props) => {
     <div className='w-full bg-white h-[8rem] sm:h-[5rem] rounded-lg relative overflow-hidden px-5 py-3 sm:pt-3 transition-all ease-in-out my-2'>
         <div className={css} />
         {props.children}
-        {console.log(css)}
     </div>
   )
 }

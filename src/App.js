@@ -1,4 +1,4 @@
-import jwtDecode from "jwt-decode";
+import React from "react";
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Blog from "./Pages/Blog";
@@ -38,7 +38,6 @@ function App() {
           <Route path="/login" element={isLoggedIn ? <Navigate replace to="/" /> : <LoginPage />} />
           <Route path="/signup" element={isLoggedIn ? <Navigate replace to="/" /> : <SignupPage />} />
           <Route path="/blogs" element={<Blog />} >
-            {/* <Route path="/write" element={} /> */}
           </Route>
         </Routes>
     </div>

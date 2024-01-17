@@ -20,13 +20,13 @@ const Header = () => {
         <nav>
           <ul className='flex xl:gap-8 gap-5 transition-all ease-in-out visby px-2'>
             <Link to="/blogs">
-              <a className='md:block hidden'>Blogs</a>
+              <li className='md:block hidden'>Blogs</li>
             </Link>
             <Link to="/">
-              <a className='md:block hidden'>Dashboard</a>
+              <li className='md:block hidden'>Dashboard</li>
             </Link>
             <Link to="/">
-              <a onClick={logoutHandler} className='md:block hidden'>Logout</a>
+              <li onClick={logoutHandler} className='md:block hidden'>Logout</li>
             </Link>
           </ul>
         </nav>

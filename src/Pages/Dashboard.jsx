@@ -11,7 +11,6 @@ import { Navigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
-  
   const [loading, setLoading] = useState(true)
   const { hospitalData, setHospitalData, isLoggedIn } = useUserState()
   
@@ -21,11 +20,11 @@ const Dashboard = () => {
   else if (pathname === "/doctors") content = <Doctors />
   
   const token = localStorage.getItem("jwt")
-  const { HospitalId } = jwtDecode(token)
+  const { hospitalId } = jwtDecode(token)
 
   useEffect(() => {
     (async () => {
-      const res = await getHospitalData(HospitalId)
+      const res = await getHospitalData(hospitalId, token)
       await setHospitalData(res)
       setLoading(prev => false)
     })()

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDayList } from '../store/store'
 
@@ -24,8 +24,8 @@ const DayIcon = ({ day, initial }) => {
     }, [active])
 
   return (
-    <a  onClick={clickHandler} 
-        className={(active) ? activeCss : inactiveCss}>{initial}</a>
+    <div onClick={clickHandler} 
+         className={(active) ? activeCss : inactiveCss}>{initial}</div>
   )
 }
 
